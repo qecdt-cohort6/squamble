@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Squamble</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+.vertical-menu {
+  margin: auto;
+  width: 400px;
+  height: 300px;
+  overflow-y: auto; /* Set a width if you like */
+}
+
+.vertical-menu a {
+  background-color: #eee; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu a.active {
+  background-color: #aaa; /* Add a green color to the "active/current" link */
+  color: white;
+}
+</style>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-grey w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-grey" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index_v2.html" class="w3-bar-item w3-button w3-padding-large w3-hover-white">Home</a>
+    <a href="How_to_play.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">How to play</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="How_to_play.html" class="w3-bar-item w3-button w3-padding-large">How to play</a>
+    <a href="index2.html" class="w3-bar-item w3-button w3-padding-large">Home</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-center" style="padding:128px 16px; background-image: url('./Background_v3.jpg');">
+  <h1 class="w3-margin w3-jumbo">About</h1>
+  <p class="w3-xlarge">Full details can be found in the project report.</p>
+</header>
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h5 class="w3-padding-32">Squamble is based on graphs that represent quantum circuits.</h5>
+
+      <p class="w3-text-grey">The basis states of a quantum circuit are labelled by the numbers in the circles in the graph. When you measure the output
+        of a quantum circuit, you can get different states with different probabilities. For example, in tutorial level 1, the input state is 0. The 
+        output state has a probability of 0.5 of being measured in state 0, and 0.5 of being measured in state 1. This is represented by probability 'flowing' 
+        through the graph; 0.5 stays in the state 0, and 0.5 goes to the state 1. This probabilistic property of quantum circuits is because of the principle 
+        of superposition, where a quantum state can be in multiple basis states at the same time!
+      </p>
+
+      <p class="w3-text-grey"> Higher levels show more complex circuits (the circuit underlying Levels 4 and 5 are shown on the right hand side), made up of multiple gates. We use a Hadamard (H) gate, that takes the 0 state to
+        an equal superposition of 0 and 1, and a NOT gate (X), that takes 0 to 1 and vice versa. To find out more, check out https://qiskit.org/textbook/preface.html.
+      </p>
+
+      <p class="w3-text-grey"> By moving the probability around a cycle, it is possible to change the edge values, but represent the circuit, as the total probability
+        entering/leaving a node stays the same. The levels in Squamble show a mixed version of the circuit graph, where some edges have negative values, and the goal of the 
+        game is to rearrange the probability within the graph so that none of the edge values are negative.
+      </p>
+    </div>
+
+    <div class="w3-third w3-center">
+      <img src="circuit.png"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+ <p>Html template from <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+ <p>Image by <a href="https://unsplash.com/@judebeck" target="_blank">Jude Beck</a> via Unsplash</p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>
